@@ -1,3 +1,7 @@
+app.run(function() {
+    FastClick.attach(document.body);
+});
+
 angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ja.qr'])
 
     .run(function ($rootScope, $state, $ionicPlatform, $window, $localstorage, Login) {
