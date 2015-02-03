@@ -1,0 +1,67 @@
+<head>
+<style>
+.card        {
+    background: url("http://localhost:8005/www/card_image.jpg");
+    background-position: center;
+}
+
+.pane,       {
+    background: transparent;
+}
+	
+</style>
+<body> 
+</head>
+<ion-view title="My Points" hide-back-button="false">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <div style="text-align:right;margin-right:5px">
+            <img src="img/logo.png" width="38" height="28" />
+            <div class="signin">
+                <ul ng-if="userModel.isLogIn==false">
+                    <li>
+                        <a href="#/app/login">Login</a>
+                    </li>
+                </ul>
+                <ul ng-if="userModel.isLogIn==true">
+                    <li>{{userModel.firstname}} {{profile.lastname}}</li>
+                </ul>
+            </div>
+        </div>
+    </ion-nav-buttons>
+    <ion-content has-header="true" class="content-bg"  >
+        <p></p>
+        <div style="text-align:center;margin-bottom:40px;margin-top:40px">
+
+
+<div id="qrcode"></div>
+
+</body>
+</html>
+
+
+
+
+
+            <h1>{{profile.firstname}} {{profile.lastname}}</h1>
+	    <p><label for="totalpoints" class="label-header">Total Points</label>  : {{userModel.points}}</p>
+	    <p><label for="redeemablepoints" class="label-header">Redeemable Points</label>  : {{userModel.points_redeemable}}</p>
+	    <p><label for="pointsinprocess" class="label-header">Points in Process </label>  : {{userModel.points_inprocess}}</p>
+
+        </div>
+
+
+
+
+        <div style="text-align:center">
+                <qr text="qrcodeString" ></qr>
+        </div>
+        <div style="text-align:center;margin-top:40px">
+            <h3>{{qrcodeString}}</h3>
+        </div>
+    </ion-content>
+
+</ion-view>

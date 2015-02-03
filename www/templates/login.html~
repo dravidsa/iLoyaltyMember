@@ -1,0 +1,55 @@
+<ion-view title="Login" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <div style="text-align:right;margin-right:5px">
+            <img src="img/logo.png" width="38" height="28" />
+            <div class="signin">
+                <!--<ul ng-if="userModel.isLogIn==false">
+                    <li>
+                        <a href="#/app/login">Login</a>
+                    </li>
+                </ul>-->
+                <ul ng-if="userModel.isLogIn==true">
+                    <li>{{userModel.firstname}}</li>
+                </ul>
+            </div>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true"  class="content-bg">
+
+        <div class="list list-inset content-bg">
+
+            <div ng-if="loginAlerts.length>0">
+                <div class="alert alert-{{alert.type}}" ng-repeat="alert in loginAlerts">{{alert.message}}</div>
+            </div>
+            <form role="form" name="myForm">
+                <label for="username" class="label-header">User name</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter email address or mobile number" ng-model="loginData.username" required>
+                <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+                    <span ng-show="myForm.username.$error.required">User name is required.</span>
+                </span>
+                <br />
+
+                <label for="password" class="label-header">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" ng-model="loginData.password" required>
+                <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                    <span ng-show="myForm.password.$error.required">Password is required.</span>
+                </span>
+                <br />
+                <br />
+                <button class="buttonDarkblue" ng-tap="doLogin(loginData)" ng-disabled="myForm.password.$invalid">Login</button>
+                <p></p>
+
+                <button class="buttonOrange" ng-tap="showRegister()" ng-if="userModel.isLogIn==false">Sign up for a new member</button>
+            </form>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>
