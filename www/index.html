@@ -8,20 +8,7 @@
     <link href="css/app.css" rel="stylesheet">
 
 </head>
-<body ng-app="app"onload ="getNumber()" >
-<script>
-function getNumber() {
-//    alert("in get number ");
-var telephoneNumber = cordova.require("cordova/plugin/telephonenumber");
-telephoneNumber.get(function(result) {
-//alert("tel is "+ result) ; 
-        console.log("result = " + result);
-    }, function() {
-        console.log("error");
-    });
-    
-}
-</script>
+<body ng-app="app" >
 
 <ion-nav-view id="main"></ion-nav-view>
 

@@ -1,10 +1,7 @@
-app.run(function() {
-    FastClick.attach(document.body);
-});
-
 angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ja.qr'])
 
     .run(function ($rootScope, $state, $ionicPlatform, $window, $localstorage, Login) {
+    FastClick.attach(document.body);
         var userModel = {
             isLogIn: false, userid:"", firstname: "", lastname: "", mobileno: "", emailid: "", birthdate: "",
             address1: "", address2: "", city: "", pincode: "", state: "", country: "", cardno: "", memberpin: "", points: "",
