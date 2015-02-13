@@ -22,6 +22,7 @@
     <script src="js/qrcode.js"></script>
     <script src="js/angular-qr.js"></script>
     <script src="js/ngImgCache.js"></script>
+    <script src="js/imgcache.js"></script>
     <script src="js/ngImgCacheIonic.js"></script>
     
 </body>
