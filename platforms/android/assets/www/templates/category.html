@@ -24,7 +24,7 @@
         <ion-list>
             <ion-item ng-repeat="category in categories.data" type="item-text-wrap" href="#/app/category/{{$index}}">
                 <div class="row">
-                    <img src="{{serverBaseUrl}}{{category.image}}" width="48" height="42" />
+                    <img ng-src="{{serverBaseUrl}}{{category.image}}" ng-cache width="48" height="42" />
                     <div class="col-75" style="margin-left:10px">
                         <span style="font-size: 18px;font-weight: bold; color:#3B5998">{{category.name}}</span>
                         <div style="font-size: 14px;font-weight: bold;color:black">{{category.details}}</div>

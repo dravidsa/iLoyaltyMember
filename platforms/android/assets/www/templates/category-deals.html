@@ -19,7 +19,7 @@
 
         <div class="list card deal" ng-repeat="deal in categoryDeals">
             <div class=" item item-avatar item-bg deal-title">
-                <img src="{{serverBaseUrl}}{{deal.store_logo}}">
+                <img ng-src="{{serverBaseUrl}}{{deal.store_logo}}" ng-cache >
                 <span style="font-weight: bold;font-size: 24px;color:black">{{deal.deal_name}}</span>
                 <p style="color:black">{{deal.startdate}} to {{deal.enddate}}</p>
             </div>
