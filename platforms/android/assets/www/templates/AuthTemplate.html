@@ -1,0 +1,12 @@
+﻿<ion-nav-buttons side="right">
+    <div class="signin">
+        <ul ng-if="userModel.isLogIn==false">
+            <li>
+                <a href="#/app/login">Login</a>
+            </li>
+        </ul>
+        <ul ng-if="userModel.isLogIn==true">
+            <li>Welcome {{userModel.firstName}}</li>
+        </ul>
+    </div>
+</ion-nav-buttons>

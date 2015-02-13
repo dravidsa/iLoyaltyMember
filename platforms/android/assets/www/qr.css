@@ -1,0 +1,19 @@
+#parent{
+/*
+background: url('card_image.jpg'); 
+width: 303px;
+height:185px;
+*/
+}
+
+#child{
+background:url('http://www.mobile-barcodes.com/images/small-qr-code.gif');
+ position: absolute;
+    right: 1050px;
+    top: 0;
+margin-right : 0px ; 
+margin-left : 200px ; 
+margin-top:5px; 
+width: 100px;
+height: 100px;
+}

@@ -1,0 +1,64 @@
+<ion-view title="Profile">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <!--<ng-include src="authtemplate" />-->
+    <ion-nav-buttons side="right">
+        <div style="text-align:right;margin-right:5px">
+            <img src="img/logo.png" width="38" height="28" />
+            <div class="signin">
+                <ul ng-if="userModel.isLogIn==false">
+                    <li>
+                        <a href="#/app/login">Login</a>
+                    </li>
+                </ul>
+                <ul ng-if="userModel.isLogIn==true">
+                    <li>{{userModel.firstname}}</li>
+                </ul>
+            </div>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true" padding="true" class="content-bg">
+
+        <div class="list list-inset content-bg">
+
+            <!--<div ng-if="loginAlerts.length>0">
+                <div class="alert alert-{{alert.type}}" ng-repeat="alert in loginAlerts">{{alert.message}}</div>
+            </div>-->
+
+            <!--isLogIn: false, userid:"", cardno: "", memberpin: "", points: "",
+            pointsexpirydate:"",points_inprocess:"",points_redeemable:""-->
+
+            <form role="form" name="myForm">
+                <label for="firstname" class="label-header">First name</label>
+                <p>{{profile.firstname}}</p>
+                <label for="lastname" class="label-header">Last name</label>
+                <p>{{profile.lastname}}</p>
+                <label for="emailid" class="label-header">Email</label>
+                <p>{{profile.emailid}}</p>
+                <label for="mobile" class="label-header">Mobile</label>
+                <p>{{profile.mobileno}}</p>
+                <label for="dob" class="label-header">Date of birth</label>
+                <p>{{profile.birthdate}}</p>
+                <label for="address1" class="label-header">Address1</label>
+                <p>{{profile.address1}}</p>
+                <label for="address2" class="label-header">Address2</label>
+                <p>{{profile.address2}}</p>
+                <label for="city" class="label-header">City</label>
+                <p>{{profile.city}}</p>
+                <label for="pincode" class="label-header">Pincode</label>
+                <p>{{profile.pincode}}</p>
+                <label for="state" class="label-header">State</label>
+                <p>{{profile.state}}</p>
+                <label for="country" class="label-header">Country</label>
+                <p>{{profile.country}}</p>
+            </form>
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>
