@@ -71,6 +71,8 @@ foxapp = angular.module('app.controllers', ["ion-datetime-picker"])
 	console.log("going for data") ; 
 	$scope.photos = [] ; 
 	
+	//might have to remove this if this does not work for specific 
+	
 	//latlongArr = []; 
 	
 	  var div = document.getElementById('imageDiv');console.log("got div "  + div ) ; 
@@ -260,10 +262,14 @@ socket.on( "gps", function(data) {
     console.log ( "got notification" + data[0].latitude +"xx" +  data[0].longitude) ; 
     if ( (data[0].vehicle_id).toUpperCase() == ($scope.vehicleId).toUpperCase() ) {  
          var location = data[0] ; 
-        console.log( "lat long length is now before " + latlongArr.length) ; 
+       
+		latlongArr = $localstorage.getObject("latlongArr") ; 
+		 console.log( "lat long length is now before " + latlongArr.length) ; 
+		
       latlongArr.push(location );
       console.log( "lat long length is now " + latlongArr.length) ; 
-         
+        $localstorage.setObject("latlongArr",latlongArr) ; 
+		
       $scope.drawMap() ; 
 	} 
 	else console.log( " not the vehicle I want " + data[0].vehicle_id) ; 
